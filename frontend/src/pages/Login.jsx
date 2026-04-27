@@ -25,7 +25,7 @@ function Login() {
         console.log("FINAL SUBMIT FORM:", form);
 
         try {
-            const response = await API.post("/token", form);
+            const response = await API.post("/token/", form);
 ``
             localStorage.setItem("token", response.data.access);
             localStorage.setItem("refresh", response.data.refresh_token);
@@ -60,10 +60,11 @@ function Login() {
           onChange={handleChange}
           placeholder="Password"
         />
-    
+
         <button type="submit">Login</button>
       </form>
-    </div>
+
+      </div>
   );
 }
 
